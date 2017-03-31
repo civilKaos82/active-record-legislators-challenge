@@ -7,7 +7,7 @@ We'll be given descriptions of required features for our application, but we'll 
 
 
 ### Active Record Query Interface
-We should be familiar now with some of the more common Active Record queries: `.all`, `.find`, `.where`, etc.  In completing this challenge, we'll likely want to be familiar with how to use [Active Record's query interface][AR Query Interface] for filtering, sorting, etc. as well as some other techniques for loading objects.  For example, we can [load an object with its associated objects][Eager Loading].  We can define [scopes][Scopes] or class methods to provide an interface for other objects to ask for subsets of a class's records.  If we're unsure whether or not a record might already exist in the database, we can first [try to find it and then build/create it if it's not there][Find or Build].  There are powerful features built into Active Record; we need to build familiarity with them.
+We should be familiar with the more common Active Record query methods like `.all`, `.find`, and `.where`.  To complete this challenge, it will be helpful to also be familiar with some more advanced portions of [Active Record's query interface][AR Query Interface].  For example, [eager loading][] where we load an object with its associated objects.  We can define [scopes][Scopes] to return subsets of a class's records.  If it's possible that a record might already exist in the database, we can first [try to find it and then build or create it][Find or Build] if it's not there.  There are powerful features built into Active Record, and we need to learn to use them.
 
 
 ### Required Functionality
