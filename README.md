@@ -114,9 +114,9 @@ This challenge forces us to apply a lot of what we're learning at Dev Bootcamp: 
 How did that feel?  Did we know when to apply a concept?  Did we struggle with how to approach a problem?  Or how to implement a decision?  Take a minute to reflect on this challenge.  What did we do well?  Where could we use improvement?
 
 
-[AR Query Interface]: http://guides.rubyonrails.org/active_record_querying.html
-[Eager Loading]: http://guides.rubyonrails.org/active_record_querying.html#eager-loading-associations
-[Find or Build]: http://guides.rubyonrails.org/active_record_querying.html#find-or-build-a-new-object
-[Scopes]: http://guides.rubyonrails.org/active_record_querying.html#scopes
+[AR Query Interface]: http://guides.rubyonrails.org/v4.2/active_record_querying.html
+[Eager Loading]: http://guides.rubyonrails.org/v4.2/active_record_querying.html#eager-loading-associations
+[Find or Build]: http://guides.rubyonrails.org/v4.2/active_record_querying.html#find-or-build-a-new-object
+[Scopes]: http://guides.rubyonrails.org/v4.2/active_record_querying.html#scopes
 [Sunlight Foundation]: https://sunlightfoundation.com/
 
