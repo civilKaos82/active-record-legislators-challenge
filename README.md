@@ -1,9 +1,9 @@
 # Working with Legislator Data
 
 ## Summary
-This challenge is a fairly comprehensive reflection of our understanding of and abilities in applying object-oriented principles, schema design, and Active Record.  The challenge is to build a command line application that allows us to interact with data on U.S. legislators.  We'll be designing a database to hold data pulled from the [Sunlight Foundation][Sunlight Foundation].
+This challenge represents a fairly comprehensive reflection of our object-oriented programming, schema design, and Active Record abilities.  The challenge is to build a command line application that allows us to interact with data on U.S. legislators pulled from the [Sunlight Foundation][].
 
-We'll be given a list of required functionality for our application, but it's up to us to figure out how to build out that functionality.  What tables should our database have?  What models do we need?  What are the relationships between our classes?  What about views and controllers?  How will we get input from users?  We'll need to make and implement all of these decision ourselves.
+We'll be given descriptions of required features for our application, but we'll need to decide how to build out that functionality.  What types of objects do we need?  What about views and controllers?  Do we want to use command line arguments for users to enter commands?  Leverage your learning from the past few weeks to make reasoned choices.
 
 
 ### Active Record Query Interface
