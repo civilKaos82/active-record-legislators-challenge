@@ -39,8 +39,8 @@ For a given legislator ...
 
 ## Releases
 
-### Pre-release: Running Your Application
-Take a minute to get acquainted with the provided code base.  When we run our application, we'll execute the `runner.rb` file.  This file requires another file, `config/environment.rb`, that more-or-less requires everything else we'll need.
+### Pre-release: Prepratation
+Take a minute to get acquainted with the provided code base.  To run our application, we'll execute the `runner.rb` file.  This file requires another file, `config/environment.rb`, that more-or-less requires everything else we'll need.
 
 Before moving on, let's bundle and create our database.
 
