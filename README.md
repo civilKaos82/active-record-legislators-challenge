@@ -3,7 +3,7 @@
 ## Summary
 This challenge represents a fairly comprehensive reflection of our object-oriented programming, schema design, and Active Record abilities.  The challenge is to build a command line application that allows us to interact with data on U.S. legislators pulled from the [Sunlight Foundation][].
 
-We'll be given descriptions of required features for our application, but we'll need to decide how to build out that functionality.  What types of objects do we need?  What about views and controllers?  Do we want to use command line arguments for users to enter commands?  Leverage your learning from the past few weeks to make reasoned choices.
+We'll be given descriptions of required features for our application, but we'll need to decide how to build out that functionality.  What types of objects do we need?  What about views and controllers?  How will users enter commands, command line arguments?  Leverage the learning from the past few weeks to make reasoned choices.
 
 
 ### Active Record Query Interface
