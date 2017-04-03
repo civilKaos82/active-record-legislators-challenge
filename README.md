@@ -38,35 +38,27 @@ For a given legislator ...
 -->
 
 ## Releases
-
 ### Pre-release: Prepratation
 Take a minute to get acquainted with the provided code base.  To run our application, we'll execute the `runner.rb` file.  This file requires another file, `config/environment.rb`, that more-or-less requires everything else we'll need.
 
 Before moving on, let's bundle and create our database.
 
 
-### Release 0: Models and Migrations
-We'll begin this challenge by reflecting on the requirements described in the *Summary*, determining the models we'll need, and determining the design of the database that backs up the models.
+### Release 0:  Seed the Database
+We have data from the Sunlight Foundation's Congress API on everyone who's served in the U.S. Congress (see `db/data/legislators.csv`).  We need to get that data into our database.  This means that we need to design a database schema to hold the data.  Then we need to write and run migrations to create the tables in our database.  And finally, we need to import the data in the CSV file into our database.
 
-After making a decision about what we need, we'll need to implement our decision.  Create the models, write and run the migrations, etc.
+Write the script for importing the data in the `db/seeds.rb` file.  Keep in mind that when we receive data, it is not guaranteed to be in perfect order, so we might want or need to *scrub* the data.  For example, we'll need to account for some legislators having no birthday.  And more contemporary political parties are denoted with an abbreviation (e.g., an I for Independent), but the full names of historical parties are provided (e.g., Whig).
 
-What makes our models valid or not?  How will we know whether or not our models behave as expected?
+*Hint:*  In designing the schema, consider all the data in a single row of the CSV file.  There's data on the legislator, the represented state, the political party.  Should it all live in one table?
 
 
-### Release 1: Seed the Database
-In order to use our application, we'll need to get the legislator data into the database.  The legislator data can be found in the file `db/data/legislators.csv`.  Based on the requirements of our application, there's data in the CSV file that we don't need and don't want to store.  In addition, the data is not necessarily in the format that we want or it might not conform to our validations.  We might want or need to *scrub* the data before we save it in our database.
-
-A `SunlightLegislatorsImporter` module is provided in the file `lib/sunlight_legislators_importer.rb`.  This module will be responsible for populating our database based on the data in the provided CSV file—we need to define its `.import` method though.
-
-A `db/seeds.rb` file has been provided that calls this `.import` method.  Once we've defined the method, we can run the `db:seed` rake task to seed our database with the legislator data.  Before we try to seed our database, can we know whether or not our importer is working as we expect?
-
-### Release 2: Build the User Interface
+### Release 1: Build the User Interface
 With our models and database built and our legislator data in the database, let's proceed to creating the user interface.  Looking at our requirements, what information will we need to collect from users?  How will provide this information?  What is responsible for interpreting that input?  What is responsible for acting on the information?  What is responsible for making data presentable to users?
 
 This release is complete when a user can access all of the data described in the requirements.  For example, a user should be able to specify a state and see a list off all legislators from that state.
 
 
-### Release 3:  Update Listing Legislators
+### Release 2:  Update Listing Legislators
 ```
 Senators:
   Barbara Boxer (D)
@@ -92,7 +84,7 @@ As we make this change, reflect on what changes we're making?  Which parts of ou
 In deciding how to implement this change, what parts of our program know how legislators are marked as active or not?  How do we order legislators by last name?  Take time to think through what we're doing and why we're making each decision.
 
 
-### Release 4: List States with Legislator Count
+### Release 3: List States with Legislator Count
 ```
 CA: 2 Senators, 53 Representative(s)
 TX: 2 Senators, 32 Representative(s)
