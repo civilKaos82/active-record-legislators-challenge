@@ -49,55 +49,80 @@ We have data from the Sunlight Foundation's Congress API on everyone who's serve
 
 Write the script for importing the data in the `db/seeds.rb` file.  Keep in mind that when we receive data, it is not guaranteed to be in perfect order, so we might want or need to *scrub* the data.  For example, we'll need to account for some legislators having no birthday.  And more contemporary political parties are denoted with an abbreviation (e.g., an I for Independent), but the full names of historical parties are provided (e.g., Whig).
 
-*Hint:*  In designing the schema, consider all the data in a single row of the CSV file.  There's data on the legislator, the represented state, the political party.  Should it all live in one table?
+*Hint:*  In designing the schema, consider all the data in a single row of the CSV file; there's data on the legislator, the represented state, and the political party.  Also, read through the releases, so you'll know what the expectations are.  
 
 
-### Release 1: Build the User Interface
-With our models and database built and our legislator data in the database, let's proceed to creating the user interface.  Looking at our requirements, what information will we need to collect from users?  How will provide this information?  What is responsible for interpreting that input?  What is responsible for acting on the information?  What is responsible for making data presentable to users?
+### Release 1:  Display Legislators in Office
+Now that we have data in our database, let's build the application to interact with it.  We'll start by allowing users to display a list of legislators who are currently in office.  The output should include the legislators' full names including title and suffix.  A sample of output might look like Figure 1.
 
-This release is complete when a user can access all of the data described in the requirements.  For example, a user should be able to specify a state and see a list off all legislators from that state.
+*Hint:*  This is a good opportunity to define a [scope][Scopes]—maybe we allow ourselves to call something like `Legislator.in_office`.
 
-
-### Release 2:  Update Listing Legislators
 ```
-Senators:
-  Barbara Boxer (D)
-  Diane Feinstein (D)
-Representatives:
-  Xavier Becerra (D)
-  Howard L. Berman (D)
-  Brian P. Bilbray (R)
-  
-  list continues ...
+Rep. Diane Black
+Sen. Maria Cantwell
+Sen. Sherrod Brown
 ```
-*Figure 1*.  Example output for displaying a list of legislators from a given state.
+*Figure 1*.  Example of how a list of legislators might be formatted.
 
-Our application is now working as originally described, but we need to make an update.  We want a specific format for the display our list of legislators from a given state (see Figure 1):
 
-- Display only active legislators.
+### Release 2: Display Legislators Born Between Two Dates
+Add a feature that allows users to display a list of legislators who were born between two dates.  For example, legislators born between June 1, 1936 and December 31, 1936.  The output should include the legislators' full names including title and suffix, just as in *Release 1*.
+
+*Hint:* You can pass a [range condition][] to `.where`.
+
+
+### Release 3: Combine In-office and Born-between
+We can display a list of legislators that are in office and a list of those born within a date range.  Combine the two, so that users can display a list of legislators who are both in office and born between two dates.  The output should include the legislators' full names including title and suffix, just as in *Releases 1 - 2*.
+
+*Hint:* Scopes are chainable.
+
+
+### Release 4: Update the Legislator List Display
+Let's change how our lists are displayed.  In addition to a legislator's name, display the legislator's state abbreviation and political party (see Figure 2).  This change should affect the display for *Releases 1 - 3*.
+
+*Hint:*  [Eager loading][] helps us efficiently query the database for associated objects—for example, loading legislators with their states and parties.
+
+```
+Rep. Diane Black (TN, Republican)
+Sen. Maria Cantwell (WA, Democratic)
+Sen. Sherrod Brown (OH, Democratic)
+```
+*Figure 2*.  Example of how an updated list of legislators might be formatted.
+
+### Release 5: List States/Territories Represented in Congress
+Puerto Rico; Washington, D.C.; and other territories are represented in Congress alongside the 50 states.  Add a feature that allows users to list all the states and territories that have been represented in Congress.  Order the list alphabetically by state abbreviation.  Include the state abbreviation and the counts of in-office senators and representatives (see Figure 3).
+
+```
+AK:  2 Senators, 1 Representatives
+AL:  2 Senators, 7 Representatives
+AR:  2 Senators, 4 Representatives
+AZ:  2 Senators, 9 Representatives
+```
+*Figure 3*.  Example of how a list of states might be formatted.
+
+
+### Release 6:  Display the Active Legislators for a State
+Users can display a list of states and how many legislators serve each state in Congress.  Add a feature that allows users to display the list of an individual state's legislators—for example, Ohio's legislators currently serving in Congress (see Figure 4).
+
+Here are the requirements for the feature.
+
+- List only in-office legislators.
 - Senators should be listed before representatives.
 - Alphabetize the lists of senators and representatives by last name.
 - Identify legislators by party.
 
-As we make this change, reflect on what changes we're making?  Which parts of our application are effected by this change?  Do seemingly unrelated parts of our application need to change?
-
-In deciding how to implement this change, what parts of our program know how legislators are marked as active or not?  How do we order legislators by last name?  Take time to think through what we're doing and why we're making each decision.
-
-
-### Release 3: List States with Legislator Count
 ```
-CA: 2 Senators, 53 Representative(s)
-TX: 2 Senators, 32 Representative(s)
-NY: 2 Senators, 29 Representative(s)
-
-list continues ...
+Senators:
+  Sherrod Brown (D)
+  Robert J. Portman (R)
+Representatives:
+  Joyce Beatty (D)
+  Steve J. Chabot (R)
+  Warren Davidson (R)
+  
+  list continues ...
 ```
-*Figure 2.*  Example output for a list of states and their legislator counts.
-
-Let's add a new feature to our application.  We want to display a list of all states along with the count of their legislators (see Figure 2):
-
-- The states should be ordered by number of legislators.
-- For each state, display the counts of senators and representatives.
+*Figure 4*.  Example of how the list of Ohio's legislators might be formatted.
 
 
 ## Conclusion
@@ -109,6 +134,7 @@ How did that feel?  Did we know when to apply a concept?  Did we struggle with h
 [AR Query Interface]: http://guides.rubyonrails.org/v4.2/active_record_querying.html
 [Eager Loading]: http://guides.rubyonrails.org/v4.2/active_record_querying.html#eager-loading-associations
 [Find or Build]: http://guides.rubyonrails.org/v4.2/active_record_querying.html#find-or-build-a-new-object
+[range condition]: http://guides.rubyonrails.org/active_record_querying.html#range-conditions
 [Scopes]: http://guides.rubyonrails.org/v4.2/active_record_querying.html#scopes
 [Sunlight Foundation]: https://sunlightfoundation.com/
 
