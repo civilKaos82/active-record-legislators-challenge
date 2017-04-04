@@ -126,9 +126,9 @@ Representatives:
 
 
 ## Conclusion
-This challenge forces us to apply a lot of what we're learning at Dev Bootcamp: how to organize our code, schema design, Active Record, etc.  It's also more open-ended than some of the other challenges.  We've been given a description of an application, and we've had to build it, making almost all of the decisions along the way.
+This challenge forces us to apply much of what we've covered at Dev Bootcamp: how to organize our code, schema design, Active Record, etc.  We were also directed to look at some more advanced Active Record features.  
 
-How did that feel?  Did we know when to apply a concept?  Did we struggle with how to approach a problem?  Or how to implement a decision?  Take a minute to reflect on this challenge.  What did we do well?  Where could we use improvement?
+Take a few minutes to reflect on this challenge.  How did it feel?  Did we know when to apply a concept?  Did we struggle with how to approach a problem?  Or how to implement a decision?  What did we do well?  Where could we use improvement?  What can we do to sharpen our understanding and skills as we transition from building command line applications to building web applications?
 
 
 [AR Query Interface]: http://guides.rubyonrails.org/v4.2/active_record_querying.html
