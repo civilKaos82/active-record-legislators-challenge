@@ -9,33 +9,6 @@ We'll be given descriptions of required features for our application, but we'll 
 ### Active Record Query Interface
 We should be familiar with the more common Active Record query methods like `.all`, `.find`, and `.where`.  To complete this challenge, it will be helpful to also be familiar with some more advanced portions of [Active Record's query interface][AR Query Interface].  For example, [eager loading][] where we load an object with its associated objects.  We can define [scopes][Scopes] to return subsets of a class's records.  If it's possible that a record might already exist in the database, we can first [try to find it and then build or create it][Find or Build] if it's not there.  There are powerful features built into Active Record, and we need to learn to use them.
 
-<!--
-### Required Functionality
-
-For a given state ...
-- obtain a list of all the state's legislators.
-- obtain a list of just the state's representatives.
-- obtain a list of just the state's senators
-
-For a given political party ...
-- obtain a list of legislators affiliated with the party.
-- obtain a list of representatives affiliated with the party.
-- obtain a list of senators affiliated with the party.
-- obtain a list of legislators currently in office
-
-For a given legislator ...
-- obtain a list of attributes:
-  - birthday
-  - fax
-  - gender
-  - name
-  - party affiliation
-  - phone
-  - twitter id 
-  - webform for e-mail
-  - website url
-- determine whether the legislator is currently in office.
--->
 
 ## Releases
 ### Pre-release: Prepratation
