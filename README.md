@@ -11,7 +11,7 @@ We should be familiar with the more common Active Record query methods like `.al
 
 
 ## Releases
-### Pre-release: Prepratation
+### Pre-release: Preparation
 Take a minute to get acquainted with the provided code base.  To run our application, we'll execute the `runner.rb` file.  This file requires `config/environment.rb` which more-or-less requires everything else we'll need.
 
 Before moving on, let's bundle and create our database.
