@@ -20,7 +20,7 @@ Before moving on, let's bundle and create our database.
 ### Release 0:  Seed the Database
 We have data from the Sunlight Foundation's Congress API on everyone who's served in the U.S. Congress (see `db/data/legislators.csv`).  We need to get that data into our database.  This means that we need to design a database schema to hold the data.  Then we need to write and run migrations to create the tables in our database.  And finally, we need to import the data in the CSV file into our database.
 
-Write the script for importing the data in the `db/seeds.rb` file.  Keep in mind that when we receive data, it is not guaranteed to be in perfect order, so we might want or need to *scrub* the data.  For example, we'll need to account for some legislators having no birthday.  And more contemporary political parties are denoted with an abbreviation (e.g., an I for Independent), but the full names of historical parties are provided (e.g., Whig).
+Write the script for importing the data in the `db/seeds.rb` file.  Keep in mind that when we receive data, it is not guaranteed to be in perfect order, so we might want or need to *scrub* the data.  For example, we'll need to account for some legislators having no birthday.  And some political parties are denoted with an abbreviation (e.g. "I" for Independent) while others have the full party name provided (e.g. "Whig").
 
 *Hint:*  In designing the schema, consider all the data in a single row of the CSV file; there's data on the legislator, the represented state, and the political party.  Also, read through the releases, so you'll know what the expectations are.  
 
